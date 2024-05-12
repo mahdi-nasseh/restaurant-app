@@ -1,4 +1,4 @@
-import 'package:fastfoodshopping/home.dart';
+import 'package:fastfoodshopping/recipe.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const HomeScreen(),
+      home: const RecipeScreen(),
     );
   }
 }

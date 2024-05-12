@@ -2,7 +2,7 @@ import 'package:fastfoodshopping/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatefulWidget { 
   const HomeScreen({super.key});
 
   @override
