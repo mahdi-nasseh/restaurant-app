@@ -1,12 +1,16 @@
-import 'package:fastfoodshopping/recipe.dart';
+import 'package:fastfoodshopping/widjet/navbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  const SystemUiOverlayStyle(
+      systemNavigationBarColor: mainColor, statusBarColor: mainColor);
   runApp(const MyApp());
 }
 
-const Color primaryFontColor =  Color(0xff0B090A);
-const Color secondaryFontColor =  Color(0xff161A1D);
+const Color primaryFontColor = Color(0xff0B090A);
+const Color secondaryFontColor = Color(0xff161A1D);
+const Color mainColor = Color(0xffA4161A);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,7 +33,8 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const RecipeScreen(),
+      home: const NavBar(),
     );
   }
 }
+

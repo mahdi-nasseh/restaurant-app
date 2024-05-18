@@ -14,6 +14,7 @@ class RecipeScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverAppBar(
+              automaticallyImplyLeading: false,
               expandedHeight: 400,
               flexibleSpace: FlexibleSpaceBar(
                 background: Image.asset(
@@ -89,9 +90,13 @@ class RecipeScreen extends StatelessWidget {
 }
 
 Widget _getbody() {
+  List flist = ["cheese", "meat", "spices", "sausage", "mint", "garlic"];
+  List fweight = ["100g", "250g", "20g", "200g", "10g", "5g"];
   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
             'assets/icons/thunder.png',
@@ -99,22 +104,106 @@ Widget _getbody() {
             height: 33,
           ),
           Image.asset(
-            'assets/icons/thunder.png',
+            'assets/icons/meat.png',
             width: 33,
             height: 33,
           ),
           Image.asset(
-            'assets/icons/thunder.png',
+            'assets/icons/fire.png',
             width: 33,
             height: 33,
           ),
           Image.asset(
-            'assets/icons/thunder.png',
+            'assets/icons/star.png',
             width: 33,
             height: 33,
           ),
         ],
-      )
+      ),
+      Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text(
+            '120',
+            style: TextStyle(color: primaryFontColor.withOpacity(0.6)),
+          ),
+          Text(
+            '150',
+            style: TextStyle(color: primaryFontColor.withOpacity(0.6)),
+          ),
+          Text(
+            '10',
+            style: TextStyle(color: primaryFontColor.withOpacity(0.6)),
+          ),
+          Text(
+            '4.4',
+            style: TextStyle(color: primaryFontColor.withOpacity(0.6)),
+          ),
+        ],
+      ),
+      const Padding(
+        padding: EdgeInsets.fromLTRB(16, 16, 0, 0),
+        child: Text(
+          'ingredients',
+          style: TextStyle(
+              color: primaryFontColor,
+              fontWeight: FontWeight.bold,
+              fontSize: 18),
+        ),
+      ),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 16),
+          child: Row(
+            children: [
+              ...List.generate(flist.length, (index) {
+                return Container(
+                  margin: const EdgeInsets.fromLTRB(0, 5, 5, 5),
+                  height: 40,
+                  width: 90,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withOpacity(0.05),
+                          blurRadius: 5,
+                        ),
+                      ]),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/icons/${flist[index]}.png',
+                        width: 25,
+                        height: 25,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        '${fweight[index]}',
+                        style: const TextStyle(color: primaryFontColor),
+                      ),
+                    ],
+                  ),
+                );
+              }),
+            ],
+          ),
+        ),
+      ),
+       Padding(
+        padding: const EdgeInsets.all(16),
+        child: Text(
+          'This recipe takes time. Before you start cooking, you’ll need to have your active, mature sourdough starter ready to go. It’s mature when you’ve been feeding it regularly in the days leading up to starting this recipe. We suggest you make the starter 3 to 4 days before cooking. If you’re not up for making a starter, you can also ask your local bakery if they’ll share a bit of their starter with you. While this recipe makes 10 ounces (250 grams) of levain, you will only need 7 ounces (200 grams) for your final mix.',
+          style: TextStyle(
+            color: primaryFontColor.withOpacity(0.5),
+            fontSize: 14,
+          ),
+        ),
+      ),
     ],
   );
 }
