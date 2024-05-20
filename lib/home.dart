@@ -2,6 +2,7 @@ import 'package:fastfoodshopping/main.dart';
 import 'package:fastfoodshopping/recipe.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -73,6 +74,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: themeData.colorScheme.background,
       appBar: AppBar(
+        systemOverlayStyle: const SystemUiOverlayStyle(
+            statusBarColor: mainColor,
+            statusBarBrightness: Brightness.light,
+            statusBarIconBrightness: Brightness.light,
+            systemNavigationBarColor: Colors.white,
+            systemNavigationBarIconBrightness: Brightness.dark),
         title: const Text(
           "McDonald's",
           style: TextStyle(fontWeight: FontWeight.w900),

@@ -1,10 +1,16 @@
+import 'package:fastfoodshopping/auth.dart';
 import 'package:fastfoodshopping/widjet/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 void main() {
-  const SystemUiOverlayStyle(
-      systemNavigationBarColor: mainColor, statusBarColor: mainColor);
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarIconBrightness: Brightness.dark,
+      statusBarColor: Colors.white,
+      systemNavigationBarColor: Colors.white,
+    ),
+  );
   runApp(const MyApp());
 }
 
@@ -37,4 +43,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
