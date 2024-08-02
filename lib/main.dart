@@ -1,4 +1,3 @@
-import 'package:fastfoodshopping/auth.dart';
 import 'package:fastfoodshopping/widjet/navbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
